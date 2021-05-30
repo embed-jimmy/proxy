@@ -10,10 +10,7 @@ const client = axios.create({
 export async function getDeviceData() {
   const response = await client.get('/shadow/data')
   const netpieData = response.data
-  return {
-    ...netpieData.data,
-    modified: netpieData.modified,
-  }
+  return netpieData.data
 }
 
 export async function updateDeviceData(updatedData: any) {
