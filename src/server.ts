@@ -48,7 +48,6 @@ server.listen(port, () => {
 initMqtt(onDeviceUpdated)
 
 async function onDeviceUpdated() {
-  console.log('device data updated, broadcasting')
   pMemoize.clear(getData)
   await broadcastDeviceData()
 }
